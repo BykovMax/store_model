@@ -1,3 +1,5 @@
+import json
+
 import pytest
 
 from src.models import Category, Product
@@ -32,3 +34,21 @@ def category(sample_products):
         ),
         products=sample_products
     )
+
+
+@pytest.fixture
+def tmp_json_file(tmp_path):
+    """Создает временный JSON-файл с одной категорией и двумя продуктами."""
+    data = [
+        {
+            "name": "Книги",
+            "description": "Разные книги",
+            "products": [
+                {"name": "Книга А", "description": "Описание A", "price": "100.5", "quantity": "3"},
+                {"name": "Книга Б", "description": "Описание B", "price": 200, "quantity": 2}
+            ]
+        }
+    ]
+    file_path = tmp_path / "test_data.json"
+    file_path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    return str(file_path)
