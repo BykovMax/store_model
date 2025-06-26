@@ -19,7 +19,25 @@
 
 ## Структура проекта
 
-- `src/` — основной код
-  - `models.py` — классы `Product` и `Category`
-- `tests/` — тесты с использованием `pytest`
-- `README.md` — описание проекта
+- `src/` - основной код
+  - `models.py` - классы `Product` и `Category`
+- `tests/` - тесты с использованием `pytest`
+  - `conftest.py` - фикстуры
+  - `test_models.py` - тесты классов
+- `README.md` - описание проекта
+- `htmlcov/` - html-отчёт о покрытии 
+- `pyproject.tom` - зависимости и настройки
+
+## Тестирование 
+Для тестирования используется `pytest` и `mock/patch`.
+
+### Запуск тестов 
+Перейдите в корневую директорию проекта и выполните:  
+```bash
+pytest --cov
+coverage html
+```
+
+## Автор
+
+[BykovMax](https://github.com/BykovMax)
