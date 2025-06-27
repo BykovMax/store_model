@@ -22,19 +22,23 @@
 ## Структура проекта
 
 - `src/` - основной код
-  - `models.py` 
+  - `product.py`
+  - `category`
   - `loaders` 
 - `tests/` - тесты с использованием `pytest`
-  - `conftest.py` 
-  - `test_models.py` 
+  - `conftest.py`
+  - `test_category`
+  - `test_product.py` 
   - `test_loaders.py` 
 - `README.md` - описание проекта
 - `htmlcov/` - html-отчёт о покрытии 
 - `pyproject.tom` - зависимости и настройки
 
 ## Добавленные модули 
-### модуль `models.py`
+### модуль `product.py`
 - `class Product` - Класс для представления товара в магазине.
+
+### модуль `category.py`
 - `class Category` - Класс для представления категории товаров.
 
 ### модуль `loaders.py`

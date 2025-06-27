@@ -1,5 +1,5 @@
 from src.loaders import load_data_from_json
-from src.models import Category
+from src.category import Category
 
 
 def main():
