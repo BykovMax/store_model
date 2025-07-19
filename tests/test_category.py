@@ -1,6 +1,7 @@
 from src.category import Category
 from src.product import Product
 
+
 # ===========================
 # ====== тесты Category =====
 # ===========================
@@ -17,6 +18,10 @@ def test_category_init(category):
         "Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт."
     )
     assert category.products == expected
+
+
+def test_category_str(category):
+    assert str(category) == "Смартфоны, количество продуктов: 27 шт."
 
 
 def test_category_class_counters(sample_products):

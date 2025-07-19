@@ -1,5 +1,6 @@
 from src.product import Product
 
+
 # ===========================
 # ====== тесты Product ======
 # ===========================
@@ -9,6 +10,17 @@ def test_product_init(sample_product):
     assert sample_product.description == "512 ГБ, черный, 12 ГБ, 2 SIM, камера 50+50+12 МП"
     assert sample_product.price == 50999
     assert sample_product.quantity == 2
+
+
+def test_product_str(sample_product):
+    assert str(sample_product) == "Honor 200 Pro, 50999 руб. Остаток: 2 шт."
+
+
+def test_product_addition():
+    p1 = Product("Товар 1", "Описание 1", 100, 3)  # 100 * 3 = 300
+    p2 = Product("Товар 2", "Описание 2", 200, 2)  # 200 * 2 = 400
+    total = p1 + p2
+    assert total == 700
 
 
 def test_product_price_getter_setter(sample_product):
