@@ -1,3 +1,4 @@
+# from src.LawnGrass import LawnGrass
 from src.product import Product
 
 
@@ -9,7 +10,6 @@ class Smartphone(Product):
         self.model = model
         self.memory = memory
         self.color = color
-
 
 # if __name__ == "__main__":
 #     product = Smartphone("Honor 200 Pro", "смартфон", 50999, 3,
@@ -24,3 +24,9 @@ class Smartphone(Product):
 #     print(product.model)
 #     print(product.memory)
 #     print(product.color)
+#
+#     phone = Smartphone("iPhone", "desc", 100000, 1, "батарея", "15 Pro", "512", "black")
+#     grass = LawnGrass("Трава", "desc", 500, 10, "Россия", "7 дней", "зелёная")
+#
+#     print(phone + phone)  # OK
+#     print(phone + grass)  # TypeError
