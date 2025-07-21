@@ -1,6 +1,7 @@
+import pytest
+
 from src.category import Category
 from src.product import Product
-
 
 # ===========================
 # ====== тесты Category =====
@@ -59,3 +60,8 @@ def test_category_products_property(category):
         assert product.name in result
         assert str(product.price) in result
         assert str(product.quantity) in result
+
+
+def test_add_invalid_product_type(category):
+    with pytest.raises(TypeError):
+        category.add_product("не продукт")
