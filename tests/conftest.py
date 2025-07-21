@@ -3,7 +3,9 @@ import json
 import pytest
 
 from src.category import Category
+from src.LawnGrass import LawnGrass
 from src.product import Product
+from src.smartphone import Smartphone
 
 
 @pytest.fixture
@@ -53,3 +55,30 @@ def tmp_json_file(tmp_path):
     file_path = tmp_path / "test_data.json"
     file_path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
     return str(file_path)
+
+
+@pytest.fixture
+def sample_lawngrass():
+    return LawnGrass(
+        name="Универсальная трава",
+        description="Смесь для газонов",
+        price=1500,
+        quantity=20,
+        country="Россия",
+        germination_period="7 дней",
+        color="Зеленый"
+    )
+
+
+@pytest.fixture
+def sample_smartphone():
+    return Smartphone(
+        name="Honor 200 Pro",
+        description="смартфон",
+        price=50999,
+        quantity=3,
+        efficiency="Qualcomm Snapdragon 8s Gen 3",
+        model="HONOR 200 Pro",
+        memory="512 ГБ",
+        color="Черный"
+    )

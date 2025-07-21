@@ -1,5 +1,6 @@
-from src.product import Product
+import pytest
 
+from src.product import Product
 
 # ===========================
 # ====== тесты Product ======
@@ -62,3 +63,21 @@ def test_new_product_with_duplicates():
     assert new_prod.quantity == 5
     assert new_prod.price == 185000
     assert len(existing) == 1
+
+
+def test_product_addition_same_class():
+    p1 = Product("Товар A", "Описание", 100.0, 2)
+    p2 = Product("Товар B", "Описание", 50.0, 3)
+    result = p1 + p2
+    assert result == (100 * 2 + 50 * 3)  # 200 + 150 = 350
+
+
+def test_product_addition_different_class():
+    p = Product("Товар", "Описание", 100.0, 2)
+
+    class Dummy:
+        price = 100
+        quantity = 1
+
+    with pytest.raises(TypeError):
+        _ = p + Dummy()
