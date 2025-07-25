@@ -1,4 +1,7 @@
-class Product:
+from src.base_product import BaseProduct
+
+
+class Product(BaseProduct):
     """Класс для представления товара в магазине."""
 
     def __init__(self, name: str, description: str, price: float, quantity: int):
