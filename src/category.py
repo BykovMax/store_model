@@ -33,3 +33,8 @@ class Category:
             f"{p.name}, {p.price} руб. Остаток: {p.quantity} шт."
             for p in self.__products
         )
+
+    @property
+    def products_list(self) -> list[Product]:
+        """Возвращает список товаров в категории (не строку)."""
+        return self.__products

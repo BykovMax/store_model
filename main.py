@@ -9,7 +9,7 @@ def main():
     for category in categories:
         print(f"Категория: {category.name}")
         print(f"Описание: {category.description}")
-        print(f"Количество товаров: {Category.product_count}")  # или len(...) если хочешь по категориям
+        print(f"Количество товаров: {len(category.products_list)}")  # или len(...) если хочешь по категориям
         print(category.products)  # ← используем геттер как строку
         print()
 
