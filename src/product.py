@@ -41,6 +41,6 @@ class Product(InitMessageMixin, BaseProduct):
         )
 
 
-if __name__ == "__main__":
-    product = Product("MacBook", "Ноутбук от Apple", 120000, 3)
-    print(product)  # Ожидается: MacBook, 120000 руб. Остаток: 3 шт.
+# if __name__ == "__main__":
+#     product = Product("MacBook", "Ноутбук от Apple", 120000, 3)
+#     print(product)  # Ожидается: MacBook, 120000 руб. Остаток: 3 шт.
