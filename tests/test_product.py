@@ -81,3 +81,8 @@ def test_product_addition_different_class():
 
     with pytest.raises(TypeError):
         _ = p + Dummy()
+
+
+def test_quantity_setter_negative(sample_product):
+    with pytest.raises(ValueError):
+        sample_product.quantity = -5
