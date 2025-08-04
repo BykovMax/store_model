@@ -6,6 +6,8 @@ class Product(InitMessageMixin, BaseProduct):
     """Класс для представления товара в магазине."""
 
     def __init__(self, name: str, description: str, price: float, quantity: int):
+        if quantity == 0:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         super().__init__(name, description, price, quantity)
 
     def __str__(self) -> str:
@@ -39,7 +41,6 @@ class Product(InitMessageMixin, BaseProduct):
             price=float(data["price"]),
             quantity=int(data["quantity"])
         )
-
 
 # if __name__ == "__main__":
 #     product = Product("MacBook", "Ноутбук от Apple", 120000, 3)

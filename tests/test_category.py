@@ -3,6 +3,7 @@ import pytest
 from src.category import Category
 from src.product import Product
 
+
 # ===========================
 # ====== тесты Category =====
 # ===========================
@@ -65,3 +66,19 @@ def test_category_products_property(category):
 def test_add_invalid_product_type(category):
     with pytest.raises(TypeError):
         category.add_product("не продукт")
+
+
+def test_average_price_with_products():
+    products = [
+        Product("Samsung", "Смартфон", 100_000, 5),
+        Product("iPhone", "Смартфон", 120_000, 3),
+        Product("Xiaomi", "Смартфон", 60_000, 10),
+    ]
+    category = Category("Смартфоны", "Мобильные устройства", products)
+    expected_average = (100_000 + 120_000 + 60_000) / 3
+    assert category.average_price() == expected_average
+
+
+def test_average_price_empty_category():
+    empty_category = Category("Пустая", "Нет товаров", [])
+    assert empty_category.average_price() == 0
