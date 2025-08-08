@@ -2,6 +2,7 @@ import pytest
 
 from src.product import Product
 
+
 # ===========================
 # ====== тесты Product ======
 # ===========================
@@ -86,3 +87,13 @@ def test_product_addition_different_class():
 def test_quantity_setter_negative(sample_product):
     with pytest.raises(ValueError):
         sample_product.quantity = -5
+
+
+def test_product_zero_quantity_raises():
+    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
+        Product(
+            name="Xiaomi Mi Band",
+            description="Фитнес-браслет",
+            price=2990,
+            quantity=0
+        )

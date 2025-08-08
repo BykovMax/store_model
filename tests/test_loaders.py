@@ -5,6 +5,7 @@ import pytest
 from src.category import Category
 from src.loaders import load_data_from_json
 
+
 # =================================
 # ====== load_data_from_json ======
 # =================================

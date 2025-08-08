@@ -19,6 +19,13 @@ class Category:
         total_quantity = sum(product.quantity for product in self.__products)
         return f"{self.name}, количество продуктов: {total_quantity} шт."
 
+    def average_price(self) -> float:
+        try:
+            total = sum(product.price for product in self.__products)
+            return total / len(self.__products)
+        except ZeroDivisionError:
+            return 0
+
     def add_product(self, product: Product):
         """Добавляет продукт в категорию."""
         if not isinstance(product, Product):
